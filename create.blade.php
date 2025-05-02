@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Student</title>
-</head>
-<body>
-<h1>Show create form</h1>
-</body>
-</html>
+@extends('layout')
+
+@section('content')
+<h1>Add Book</h1>
+<form method="POST" action="{{ route('books.store') }}">
+    @csrf
+    <input name="title" placeholder="Title" required><br>
+    <input name="author" placeholder="Author" required><br>
+    <textarea name="description" placeholder="Description"></textarea><br>
+    <input name="published_year" type="number" placeholder="Published Year"><br>
+    <button type="submit">Save</button>
+</form>
+@endsection
